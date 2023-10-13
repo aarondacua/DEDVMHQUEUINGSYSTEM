@@ -9,6 +9,8 @@ class Customer extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'queue_number', 'status', 'service_id'];
+
     public function service()
 {
     return $this->belongsTo(Service::class);

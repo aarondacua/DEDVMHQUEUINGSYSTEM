@@ -7,7 +7,11 @@
                     Queue Number
                 </div>
                 <div class="text-center sm:p-5 md:p-5 lg:p-10 text-xl md:text-2xl lg:text-7xl">
-                    <div class="rounded-lg bg-yellow-50 shadow">100</div>
+                    @foreach($customers as $customer)
+                    @if($customer->status === 'in_progress')
+                    <div class="rounded-lg bg-yellow-50 shadow"> {{ $customer->queue_number }}</div>
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -15,9 +19,15 @@
         <div class="m-2">
             <div class="text-xl text-center mb-2">Awaiting</div>
             <div class="bg-red-50 rounded-lg border-2 border-gray-500 shadow-2xl">
-                <div class=" flex grid grid-cols-5 gap-2 text-center sm:p-5 md:p-5 lg:p-7 text-sm md:text-xl lg:text-2xl">
-                    <div class="rounded-lg bg-yellow-50 shadow">100</div>
-                                       
+                <div
+                    class=" flex grid grid-cols-5 gap-2 text-center sm:p-5 md:p-5 lg:p-7 text-sm md:text-xl lg:text-2xl">
+
+                    @foreach($customers as $customer)
+                    @if ($customer->service->name === 'BILLING')
+                    <div class="rounded-lg bg-yellow-50 shadow"> {{ $customer->queue_number }}</div>
+                    @endif
+                    @endforeach
+
                 </div>
             </div>
         </div>

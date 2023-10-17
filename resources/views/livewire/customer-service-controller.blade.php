@@ -1,7 +1,6 @@
 <div class="w-full flex grid items-center pt-3 sm:pt-1">
     <div class="flex gap-5 grid-cols-2 justify-center">
         <div class="m-2">
-            <div class="text-xl text-center mb-2">{{}}</div>
             <div class="text-xl text-center mb-2">Current Serving</div>
             <div class="bg-red-50 rounded-lg border-2 border-gray-500 shadow-2xl">
                 <div class="text-center sm:p-5 md:p-5 lg:p-7 text-xl md:text-4xl lg:text-4xl">
@@ -17,14 +16,7 @@
             <div class="text-xl text-center mb-2">Awaiting</div>
             <div class="bg-red-50 rounded-lg border-2 border-gray-500 shadow-2xl">
                 <div class=" flex grid grid-cols-5 gap-2 text-center sm:p-5 md:p-5 lg:p-7 text-sm md:text-xl lg:text-2xl">
-                    
-                 @foreach($b_customers as $customer)
-                    <div class="rounded-lg bg-yellow-50 shadow">{{customer->queue_number}}</div>
-                    @endforeach
-                    
-                    
-                    
-                    
+                    <div class="rounded-lg bg-yellow-50 shadow">100</div>
                                        
                 </div>
             </div>

@@ -1,14 +1,14 @@
 <div class="w-full min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
     
-    <div class=" text-center text-5xl my-20">
+    <div class=" text-gray-800 text-center text-5xl my-20">
         DON EMILIO DEL VALLE MEMORIAL HOSPITAL
         <br>
         QUEUING SYSTEM
     </div>
     
     
-    <div>
-        GET YOUR NUMBER HERE
+    <div class="text-2xl ">
+        GET YOUR NUMBER HERE!
     </div>
     @if(session('success'))
 

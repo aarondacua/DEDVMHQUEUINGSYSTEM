@@ -1,15 +1,15 @@
 <div class="w-full min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
     
     <div class=" text-gray-800 text-center text-5xl my-20">
-        DON EMILIO DEL VALLE MEMORIAL HOSPITAL
+        UBAY BASKETBALL ENTHUSIAST
         <br>
-        QUEUING SYSTEM
+        DRAFT 2023
     </div>
     
     
-    <div class="text-2xl ">
+    {{-- <div class="text-2xl ">
         GET YOUR NUMBER HERE!
-    </div>
+    </div> --}}
     @if(session('success'))
 
 
@@ -29,7 +29,7 @@
             <div>
                 <x-label for="selectedService" value="{{ __('Service') }}" />
                 <select wire:model="selectedService" class="form-control" id="selectedService" name="selectedService" required>
-                    <option value="" selected disabled>Select Service</option>
+                    <option value="" selected disabled>Select Team</option>
         
                     @foreach ($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
@@ -39,7 +39,7 @@
         
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-4">
-                    {{ __('Join Queue') }}
+                    {{ __('ADD PLAYER') }}
                 </x-button>
             </div>
         </form>
@@ -56,16 +56,13 @@
             <div class="flex justify-center m-4">
                 <table class="table table-striped">
                     <tr>
-                        <td>Service : {{ $newlyAddedCustomer->service->name }}</td>
+                        <td>TEAM : {{ $newlyAddedCustomer->service->name }}</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Name: {{ $newlyAddedCustomer->name }}</td>
                     </tr>
-                    <tr>
-                        <td>Queue Number: {{ $newlyAddedCustomer->queue_number }}</td>
-                        <td></td>
-                    </tr>
+                    
                 </table>
 
             </div>
@@ -74,9 +71,7 @@
                     {{ __('Close') }}
                 </x-button>
 
-                <x-button class="ml-4" wire:click="closeModal">
-                    {{ __('Print') }}
-                </x-button>
+              
             </div>
         </x-modal>
 
